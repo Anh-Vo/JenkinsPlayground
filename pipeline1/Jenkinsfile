@@ -1,11 +1,24 @@
 pipeline {
+  properties (
+    [
+        parameters(
+          [string(defaultValue: 'true', name: 'print')],
+        )
+    ]
+  )
   agent any
-
+  
   stages{
     stage ('Print Hello') {
-      steps{
-        echo 'Hello!' 
+      steps {
+        echo 'Hello' 
       }  
+    }
+
+    stage('Print World') {
+      steps {
+        echo 'World!'
+      } 
     }
   }
    
