@@ -1,5 +1,5 @@
 pipeline {
-  properties (
+  options (
     [
         parameters(
           [string(defaultValue: 'true', name: 'print')],
