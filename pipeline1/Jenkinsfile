@@ -1,11 +1,5 @@
 pipeline {
-  options (
-    [
-        parameters(
-          [string(defaultValue: 'true', name: 'print')],
-        )
-    ]
-  )
+  properties([[$class: 'JiraProjectProperty'], parameters([booleanParam(defaultValue: true, description: '', name: 'build'), booleanParam(defaultValue: true, description: '', name: 'deploy')])])
   agent any
   
   stages{
