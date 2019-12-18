@@ -11,14 +11,14 @@ pipeline {
     stage ('Build') {
     when { expression { return params.build } }
       steps {
-        echo 'Hello' 
+        echo 'Building...' 
       }  
     }
 
     stage('Deploy') {
       when { expression { return params.deploy } }
       steps {
-        echo 'World!'
+        echo 'Deploying...'
       } 
     }
   }
