@@ -7,14 +7,16 @@ pipeline {
       
     }
   
-  stages {
-    stage ('Print Hello') {
+  stages{
+    when { ${build} == true}
+    stage ('Build') {
       steps {
         echo 'Hello' 
       }  
     }
 
-    stage('Print World') {
+    stage('Deploy') {
+      when { ${deploy} == true}
       steps {
         echo 'World!'
       } 
