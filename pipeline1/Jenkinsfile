@@ -7,8 +7,7 @@ pipeline {
       
     }
   
-  stages{
-    when {build == true}
+  stages {
     stage ('Print Hello') {
       steps {
         echo 'Hello' 
@@ -16,7 +15,6 @@ pipeline {
     }
 
     stage('Print World') {
-      when {build == false}
       steps {
         echo 'World!'
       } 
