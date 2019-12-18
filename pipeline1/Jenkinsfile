@@ -1,9 +1,9 @@
+pipeline {
+  agent any
   options{
     parameters([booleanParam(deaultValue: true, description: '', name: 'build'),
        booleanParam(defaultValue: true, description: '', name: 'deploy')])
-  }
-pipeline {
-  agent any
+ }
   
   stages{
     stage ('Print Hello') {
