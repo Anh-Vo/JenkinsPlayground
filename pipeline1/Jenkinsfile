@@ -8,8 +8,8 @@ pipeline {
     }
   
   stages{
-    when { expression { return params.build } }
     stage ('Build') {
+    when { expression { return params.build } }
       steps {
         echo 'Hello' 
       }  
