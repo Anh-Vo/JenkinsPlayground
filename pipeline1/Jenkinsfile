@@ -8,7 +8,7 @@ pipeline {
     }
   
   stages{
-    when { ${build} == true}
+    when { expression { return params.build } }
     stage ('Build') {
       steps {
         echo 'Hello' 
@@ -16,7 +16,7 @@ pipeline {
     }
 
     stage('Deploy') {
-      when { ${deploy} == true}
+      when { expression { return params.deploy } }
       steps {
         echo 'World!'
       } 
