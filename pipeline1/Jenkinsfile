@@ -1,5 +1,8 @@
+  options{
+    parameters([booleanParam(deaultValue: true, description: '', name: 'build'),
+       booleanParam(defaultValue: true, description: '', name: 'deploy')])
+  }
 pipeline {
-  options(parameters([booleanParam(defaultValue: true, description: '', name: 'build'), booleanParam(defaultValue: true, description: '', name: 'deploy')]))
   agent any
   
   stages{
