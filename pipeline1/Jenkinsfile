@@ -1,9 +1,8 @@
-parameters{
-    booleanParam(defaultValue: true, description: '', name: 'build')
-    booleanParam(defaultValue: true, description: '', name: 'deploy')
-}
-
 pipeline {
+  parameters{
+      booleanParam(defaultValue: true, description: '', name: 'build')
+      booleanParam(defaultValue: true, description: '', name: 'deploy')
+  }
   agent any
   
   stages{
