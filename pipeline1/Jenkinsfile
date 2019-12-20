@@ -1,24 +1,29 @@
 pipeline {
   parameters{
-      booleanParam(defaultValue: true, description: '', name: 'build')
+      booleanParam(defaultValue: true, description: '', name: 'build_artifacts')
+      booleanParam(defaultValue: true, description: '', name: 'build_container')
       booleanParam(defaultValue: true, description: '', name: 'deploy')
   }
   agent any
   
   stages{
-    stage ('Build') {
-    when { expression { return params.build } }
+    stage ('Build Artifacts') {
+    when { expression { return params.build_artifacts } }
       steps {
-        echo 'Building...' 
+        echo 'Building Artifacts...' 
       }  
     }
-
+    stage('Bulid Container') {
+      when { expression { return params.build_container } }
+      steps {
+        echo 'Deploying Container...'
+      } 
+    }
     stage('Deploy') {
       when { expression { return params.deploy } }
       steps {
         echo 'Deploying...'
       } 
     }
-  }
-   
-}
+  } // Stages
+} // Pipeline
