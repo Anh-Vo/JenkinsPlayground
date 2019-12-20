@@ -5,7 +5,8 @@ pipeline {
       booleanParam(defaultValue: true, description: '', name: 'deploy')
   }
   agent any
-  
+ 
+  // Adding this commment 
   stages{
     stage ('Build Artifacts') {
     when { expression { return params.build_artifacts } }
