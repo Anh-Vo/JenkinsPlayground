@@ -7,6 +7,8 @@ pipeline {
   agent any
  
   // Adding this commment 
+  // Adding another this commment 
+
   stages{
     stage ('Build Artifacts') {
     when { expression { return params.build_artifacts } }
