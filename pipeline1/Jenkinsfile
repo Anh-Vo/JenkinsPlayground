@@ -1,4 +1,6 @@
 pipeline {
+  properties([pipelineTriggers([githubPush()])])
+
   parameters{
       booleanParam(defaultValue: true, description: '', name: 'build_artifacts')
       booleanParam(defaultValue: true, description: '', name: 'build_container')
