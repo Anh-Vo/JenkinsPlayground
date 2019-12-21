@@ -33,7 +33,7 @@ pipeline {
 
     stage('Deploy Prompt With a Boolean Choice') {
       steps {
-        input ([ 
+       def ans = input ([ 
                 message: '<Message>',
                 parameters: [booleanParam(defaultValue: true,
                 description: '<Boolean Value>'), name: 'snapshot'] 
