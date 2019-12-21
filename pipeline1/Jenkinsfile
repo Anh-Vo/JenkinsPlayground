@@ -22,7 +22,11 @@ pipeline {
 
     stage('Deploy') {
       steps {
-        input 'Are you sure you want to deploy into production?'
+        input ([ 
+                message: 'Are you sure you want to deploy into production?',
+                ok: 'Yes'
+        )]
+
         echo 'Deploying...'
       } 
     }
