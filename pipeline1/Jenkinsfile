@@ -67,5 +67,17 @@ pipeline {
       } 
     }
 
+    stage('Deploy Prompt With hidden password field') {
+      steps {
+        input ([ 
+                message: '<Message>',
+                parameters: [password(defaultValue: '',
+                description: 'Enter Password', name: 'User Password')] 
+        ]) 
+
+        echo 'Deploying snapshot...'
+      } 
+    }
+
   }
 }
