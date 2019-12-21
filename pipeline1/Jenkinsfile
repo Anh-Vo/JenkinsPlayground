@@ -1,7 +1,7 @@
 pipeline {
   parameters{
       booleanParam(defaultValue: true, description: '', name: 'build')
-      booleanParam(defaultValue: true, description: '', name: 'deploy')
+      booleanParam(defaultValue: true, description: '', name: 'archive')
   }
   agent any
   
@@ -13,12 +13,19 @@ pipeline {
       }  
     }
 
-    stage('Deploy') {
+    stage('Archive') {
       when { expression { return params.deploy } }
       steps {
+        echo 'Archiving...'
+      } 
+    }
+
+    stage('Deploy') {
+      steps {
+        input 'Are you sure you want to deploy into production?'
         echo 'Deploying...'
       } 
     }
+
   }
-   
 }
