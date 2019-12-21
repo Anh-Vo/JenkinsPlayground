@@ -55,7 +55,7 @@ pipeline {
       } 
     }
 
-    stage('Deploy Prompt With an input box taking multi-line strings) {
+    stage('Deploy Prompt With an input box taking multi-line strings') {
       steps {
         input ([ 
                 message: '<Message>',
