@@ -47,7 +47,7 @@ pipeline {
       steps {
         input ([ 
                 message: '<Message>',
-                parameters: [choice(choices: ['A', 'B', 'C']
+                parameters: [choice(choices: ['A', 'B', 'C'],
                 description: 'Make a choice', name: 'Options')] 
         ]) 
 
