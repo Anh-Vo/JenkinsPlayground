@@ -79,7 +79,7 @@ pipeline {
       } 
     }
 
-    stage('Deploy Prompt combining parameters) {
+    stage('Deploy Prompt combining parameters') {
       steps {
         def user = input ([ 
                 message: 'Login',
