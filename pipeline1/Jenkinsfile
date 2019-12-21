@@ -20,7 +20,7 @@ pipeline {
       } 
     }
 
-    stage('Deploy') {
+    stage('Simple Deploy Prompt') {
       steps {
         input ([ 
                 message: 'Are you sure you want to deploy into production?',
@@ -28,6 +28,18 @@ pipeline {
         ]) 
 
         echo 'Deploying...'
+      } 
+    }
+
+    stage('Deploy Prompt With a Boolean Choice') {
+      steps {
+        input ([ 
+                message: '<Message>',
+                parameters: [booleanParam(defaultValue: true,
+                description: '<Boolean Value>'), name: 'snapshot'] 
+        ]) 
+
+        echo 'Deploying snapshot...'
       } 
     }
 
