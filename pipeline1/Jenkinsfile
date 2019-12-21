@@ -59,9 +59,7 @@ pipeline {
       steps {
         input ([ 
                 message: '<Message>',
-                parameters: [text(defaultValue: '''
-                Type Something Here 
-                '''
+                parameters: [text(defaultValue: ''' Type Something Here ''',
                 description: '', name: 'User Input')] 
         ]) 
 
