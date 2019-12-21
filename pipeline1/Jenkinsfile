@@ -79,5 +79,22 @@ pipeline {
       } 
     }
 
+    stage('Deploy Prompt combining parameters) {
+      steps {
+        def user = input ([ 
+                message: 'Login',
+                parameters: [string(defaultValue: '', description:
+                'Username', name: 'username'),
+                password(defaultValue: '',
+                description: 'Enter Password', name: 'password')] 
+        ]) 
+        echo "Username= " + user['username']
+        echo "Password= ${user['password']}" 
+        echo user.username + " " + user.password
+
+        echo 'Deploying snapshot...'
+      } 
+    }
+
   }
 }
