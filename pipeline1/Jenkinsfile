@@ -43,7 +43,7 @@ pipeline {
       } 
     }
 
-    stage('Deploy Prompt With a list of choices') {
+    stage('Deploy Prompt With a list of options') {
       steps {
         input ([ 
                 message: '<Message>',
